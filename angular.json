@@ -3,7 +3,7 @@
   "version": 1,
   "newProjectRoot": "projects",
   "projects": {
-    "ContractManagementMVP": {
+    "contract-management-mvp": {
       "projectType": "application",
       "schematics": {},
       "root": "",
@@ -23,6 +23,10 @@
               "src/assets"
             ],
             "styles": [
+              "node_modules/primeng/resources/themes/lara-light-blue/theme.css",
+              "node_modules/primeng/resources/primeng.min.css",
+              "node_modules/primeicons/primeicons.css",
+              "node_modules/primeflex/primeflex.css",
               "src/styles.css"
             ],
             "scripts": []
@@ -62,12 +66,15 @@
         },
         "serve": {
           "builder": "@angular-devkit/build-angular:dev-server",
+          "options": {
+            "browserTarget": "contract-management-mvp:build"
+          },
           "configurations": {
             "production": {
-              "browserTarget": "ContractManagementMVP:build:production"
+              "browserTarget": "contract-management-mvp:build:production"
             },
             "development": {
-              "browserTarget": "ContractManagementMVP:build:development"
+              "browserTarget": "contract-management-mvp:build:development"
             }
           },
           "defaultConfiguration": "development"
@@ -75,7 +82,7 @@
         "extract-i18n": {
           "builder": "@angular-devkit/build-angular:extract-i18n",
           "options": {
-            "browserTarget": "ContractManagementMVP:build"
+            "browserTarget": "contract-management-mvp:build"
           }
         },
         "test": {
@@ -97,5 +104,8 @@
         }
       }
     }
+  },
+  "cli": {
+    "analytics": false
   }
 }

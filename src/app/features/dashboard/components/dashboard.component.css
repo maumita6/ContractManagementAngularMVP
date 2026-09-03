@@ -1,0 +1,15 @@
+.dashboard-container {
+    max-width: 600px;
+    margin: 80px auto;
+    text-align: center;
+    padding: 2rem;
+    border: 1px solid #ddd;
+    border-radius: 6px;
+    background-color: #f9f9f9;
+    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
+}
+
+h2 {
+    color: #007bff;
+    margin-bottom: 1rem;
+}

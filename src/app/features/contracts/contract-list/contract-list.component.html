@@ -1,0 +1,40 @@
+<div class="contract-list">
+    <!-- 🔍 Search Box -->
+    <div class="search-bar">
+        <input type="text" pInputText placeholder="Search contracts..." [formControl]="searchControl"
+            style="width: 300px" />
+    </div>
+
+    <!-- 📊 Contracts Table -->
+    <p-table [value]="contracts" [paginator]="true" [rows]="5" [responsiveLayout]="'scroll'" [loading]="isLoading">
+        <ng-template pTemplate="header">
+            <tr>
+                <th>Contract ID</th>
+                <th>Title</th>
+                <th>Status</th>
+                <th>Created At</th>
+                <th>Actions</th>
+            </tr>
+        </ng-template>
+
+        <ng-template pTemplate="body" let-contract>
+            <tr>
+                <td>{{ contract.id }}</td>
+                <td>{{ contract.title }}</td>
+                <td>
+                    <span [ngClass]="{
+              'status-pending': contract.status === 'Pending',
+              'status-completed': contract.status === 'Completed'
+            }">
+                        {{ contract.status }}
+                    </span>
+                </td>
+                <td>{{ contract.createdAt | date: 'short' }}</td>
+                <td>
+                    <button pButton type="button" label="View" icon="pi pi-eye"
+                        (click)="viewContract(contract.id)"></button>
+                </td>
+            </tr>
+        </ng-template>
+    </p-table>
+</div>

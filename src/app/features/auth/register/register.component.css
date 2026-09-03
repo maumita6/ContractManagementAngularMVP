@@ -1,0 +1,27 @@
+.register-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 85vh;
+    min-width: 100vw;
+    padding: 20px;
+    background-color: var(--surface-ground, #f8f9fa);
+}
+
+.register-card {
+    width: 100%;
+    max-width: 450px;
+}
+
+.field {
+    margin-bottom: 1.5rem;
+}
+
+/* Ensures PrimeNG icons within text boxes line up neatly */
+.p-input-icon-left {
+    width: 100%;
+}
+
+.p-input-icon-left>input {
+    width: 100%;
+}
