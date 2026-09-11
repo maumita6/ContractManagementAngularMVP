@@ -1,0 +1,14 @@
+@import "primeng/resources/themes/lara-light-indigo/theme.css";
+@import "primeng/resources/primeng.min.css";
+@import "primeicons/primeicons.css";
+@import "primeflex/primeflex.css";
+/* src/styles.css */
+@import url('https://googleapis.com');
+
+
+body {
+    font-family: 'Inter', sans-serif;
+    /* Optional: Smooth out font rendering */
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+}

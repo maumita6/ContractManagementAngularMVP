@@ -1,0 +1,75 @@
+<div class="contract-list">
+    <!--Search Box -->
+
+    <div class="p-inputgroup p-mb-16">
+        <span class="p-inputgroup-addon">
+            <i class="pi pi-search"></i>
+        </span>
+        <input type="text" pInputText placeholder="Search keyword (e.g., global)" [formControl]="searchControl"
+            class="p-inputtext-sm" />
+    </div>
+    <div class="mt-4 mb-4"></div>
+
+    <!--Contracts Table -->
+    <p-table [value]="filteredContracts" [paginator]="true" [rows]="5" [responsiveLayout]="'scroll'"
+        [loading]="isLoading">
+        <ng-template pTemplate="header">
+            <tr>
+                <th>Contract ID</th>
+                <th>Title</th>
+                <th>Status</th>
+                <th>Created At</th>
+                <th>Actions</th>
+            </tr>
+        </ng-template>
+
+        <ng-template pTemplate="body" let-contract>
+            <tr>
+                <td>{{ contract.id }}</td>
+                <td>{{ contract.title }}</td>
+                <td>
+                    <span [class]="'border-round px-2 py-1 text-xs font-medium ' +
+                     (contract.status === 'Pending'? 'bg-orange-100 text-orange-800': 'bg-green-100 text-green-800')
+                    ">
+                        {{ contract.status }}
+                    </span>
+                </td>
+                <td>{{ contract.createdAt | date: 'short' }}</td>
+                <td>
+                    <!--<button pButton type="button" [label]="contract.status === 'Pending' ? 'Edit' : 'View'"
+                        [icon]="contract.status === 'Pending' ? 'pi pi-pencil' : 'pi pi-eye'"
+                        [ngClass]="contract.status === 'Pending' ? 'p-button-warning p-button-text' : 'p-button-info p-button-text'"
+                        (click)="handleContractAction(contract)">
+                    </button>-->
+                    {{contract.role}}
+                    <!-- Reviewer -->
+                    <ng-container *ngIf="currentRole === 'REVIEWER'">
+                        <a (click)="editContract(contract)" class="p-link text-blue-600">Request Changes</a>
+                        <span class="mx-2">|</span>
+                        <a (click)="viewContract(contract)" class="p-link text-green-600">Submit Review</a>
+                    </ng-container>
+
+                    <!-- Approver -->
+                    <ng-container *ngIf="currentRole === 'APPROVER'">
+                        <button pButton type="button" label="Approve" class="p-button-success p-button-text p-button-sm"
+                            (click)="approveContract(contract)"></button>
+                        <button pButton type="button" label="Reject"
+                            class="p-button-danger p-button-text p-button-sm ml-2"
+                            (click)="rejectContract(contract)"></button>
+                    </ng-container>
+
+                    <!-- Admin -->
+                    <ng-container *ngIf="currentRole === 'ADMIN'">
+                        <button pButton type="button" label="Edit" class="p-button-warning p-button-text p-button-sm"
+                            (click)="editContract(contract)"></button>
+                        <button pButton type="button" label="View" class="p-button-info p-button-text  p-button-sm ml-2"
+                            (click)="viewContract(contract)"></button>
+                        <button pButton type="button" label="Delete"
+                            class="p-button-danger p-button-text p-button-sm ml-2"
+                            (click)="deleteContract(contract)"></button>
+                    </ng-container>
+                </td>
+            </tr>
+        </ng-template>
+    </p-table>
+</div>
