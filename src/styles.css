@@ -4,6 +4,8 @@
 @import "primeng/resources/primeng.min.css";
 @import "primeicons/primeicons.css";
 @import "primeflex/primeflex.css";
+@import url('https://googleapis.com');
+
 
 body {
     font-family: 'Inter', sans-serif;
