@@ -1,10 +1,9 @@
+/* src/styles.css */
+@import url('https://googleapis.com');
 @import "primeng/resources/themes/lara-light-indigo/theme.css";
 @import "primeng/resources/primeng.min.css";
 @import "primeicons/primeicons.css";
 @import "primeflex/primeflex.css";
-/* src/styles.css */
-@import url('https://googleapis.com');
-
 
 body {
     font-family: 'Inter', sans-serif;
