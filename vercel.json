@@ -1,14 +1,11 @@
 {
-  "builds": [
+  "routes": [
     {
-      "src": "package.json",
-      "use": "@vercel/angular"
-    }
-  ],
-  "rewrites": [
+      "handle": "filesystem"
+    },
     {
-      "source": "/(.*)",
-      "destination": "/index.html"
+      "src": "/(.*)",
+      "dest": "/index.html"
     }
   ]
 }
