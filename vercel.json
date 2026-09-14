@@ -1,11 +1,9 @@
 {
-  "routes": [
+  "outputDirectory": "dist/contract-management-angular-mvp",
+  "rewrites": [
     {
-      "handle": "filesystem"
-    },
-    {
-      "src": "/(.*)",
-      "dest": "/index.html"
+      "source": "/(.*)",
+      "destination": "/index.html"
     }
   ]
 }
