@@ -68,14 +68,14 @@
         "serve": {
           "builder": "@angular-devkit/build-angular:dev-server",
           "options": {
-            "browserTarget": "contract-management-mvp:build"
+            "browserTarget": "contract-management-angular-mvp:build"
           },
           "configurations": {
             "production": {
-              "browserTarget": "contract-management-mvp:build:production"
+              "browserTarget": "contract-management-angular-mvp:build:production"
             },
             "development": {
-              "browserTarget": "contract-management-mvp:build:development"
+              "browserTarget": "contract-management-angular-mvp:build:development"
             }
           },
           "defaultConfiguration": "development"
@@ -83,7 +83,7 @@
         "extract-i18n": {
           "builder": "@angular-devkit/build-angular:extract-i18n",
           "options": {
-            "browserTarget": "contract-management-mvp:build"
+            "browserTarget": "contract-management-angular-mvp:build"
           }
         },
         "test": {
