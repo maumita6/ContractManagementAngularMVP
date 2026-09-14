@@ -1,9 +1,3 @@
 {
-  "outputDirectory": "dist/contract-management-angular-mvp",
-  "rewrites": [
-    {
-      "source": "/(.*)",
-      "destination": "/index.html"
-    }
-  ]
+  "outputDirectory": "dist/contract-management-angular-mvp"
 }
